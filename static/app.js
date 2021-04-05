@@ -41,7 +41,9 @@ function optionChanged(subject_id) {
     var data = [bar_trace];
 
     var bar_layout = {
-      title: `Top 10 OTUs for Subject ID: ${subject_id}` 
+      title: `Top 10 OTUs for Subject ID: ${subject_id}` ,
+      yaxis: { title: "OTU ID" },
+      xaxis: { title: "SAMPLE VALUES" }
     };
 
     Plotly.newPlot("bar", data, bar_layout);
@@ -62,6 +64,7 @@ function optionChanged(subject_id) {
     var bubble_layout = {
       hovermode: "closest",
       xaxis: { title: "OTU ID" },
+      Yaxis: { title: "SAMPLE VALUES" },
       margin: { t: 20 }
     };
 
