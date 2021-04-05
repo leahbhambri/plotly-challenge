@@ -4,7 +4,6 @@ var selection = d3.select("#selDataset")
 d3.json("samples.json").then((importData) => {
 
   var subject_ids = importData.names;
-  console.log(subject_ids)
 
   subject_ids.forEach((id) => {
     selection
@@ -23,15 +22,13 @@ function optionChanged(subject_id) {
     var sample_data = data.samples
     var results = sample_data.filter(object => object.id ===subject_id)
     var result = results[0]
-    console.log(result)
 
     var otu_ids = result.otu_ids.slice(0, 10).reverse();
     var otu_labels = result.otu_labels.slice(0, 10).reverse();
     var sample_values = result.sample_values.slice(0, 10).reverse();
-    console.log(otu_ids)
 
     var otu_ids_label = otu_ids.map(otuID => `OTU ${otuID}`);
-    console.log(otu_ids_label)
+
 // create bar chart
     var bar_trace = {
       y: otu_ids_label,
@@ -75,7 +72,6 @@ function optionChanged(subject_id) {
     var metadata = data.metadata;
     var results = metadata.filter(metadataObj => metadataObj.id == subject_id);
     var result = results[0];
-    console.log(result)
 
     var fig = d3.select("#sample-metadata");
 
