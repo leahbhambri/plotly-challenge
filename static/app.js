@@ -18,7 +18,7 @@ d3.json("samples.json").then((importData) => {
 });
 
 function optionChanged(subject_id) {
-  d3.json("../samples.json").then((data) => {
+  d3.json("samples.json").then((data) => {
     var sample_data = data.samples
     var results = sample_data.filter(object => object.id ===subject_id)
     var result = results[0]
