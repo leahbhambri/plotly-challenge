@@ -71,7 +71,7 @@ function optionChanged(subject_id) {
     Plotly.newPlot("bubble", data, bubble_layout);
 
 // create demographic information list
-  d3.json("../samples.json").then((data) => {
+  d3.json("samples.json").then((data) => {
     var metadata = data.metadata;
     var results = metadata.filter(metadataObj => metadataObj.id == subject_id);
     var result = results[0];
